@@ -14,8 +14,8 @@
     <!-- HEADER -->
     <header>
             <label for="insToDo"></label>
-            <input type="text" id="insToDo" placeholder="New ToDo">
-            <button>Add</button>
+            <input v-model="newToDoText" keyup.enter="addNewToDo" type="text" id="insToDo" placeholder="New ToDo">
+            <button @click="addNewToDo">Add</button>
     </header>
 
     <!-- MAIN -->
@@ -24,10 +24,9 @@
         <ul>
 
             <li v-for="(singleToDo, index) in toDos">
-                <p :class="{'done' : toDos[index].done}">{{toDos[index].toDo}}</p>
-                <i @click="deledeToDo(index)" class="fa-solid fa-xmark"></i>               
+                <p @click="invertThisItem(index)" :class="{'done' : toDos[index].done}">{{toDos[index].toDo}}</p>
+                <i @click="deledeToDo(index)" class="fa-solid fa-xmark"></i>       
             </li>
-
 
         </ul>
 

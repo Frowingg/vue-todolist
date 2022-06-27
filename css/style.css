@@ -21,6 +21,11 @@ input{
     border: 1px solid black;
     margin-right: 10px;
 }
+#fake-btn{
+    width: 30px;
+    height: 20px;
+    background-color: red;
+}
 button{
     padding: 8px 15px;
     border-radius: 8px;
@@ -34,7 +39,6 @@ main{
     background-color: #f4f7f7;
     border-radius: 15px;
     padding: 30px 20px;
-    height: 200px;
 }
 ul{
     list-style-type: none;
@@ -50,6 +54,8 @@ li{
 }
 li i{
     font-size: 19px;
+}
+li *{
     cursor: pointer;
 }
 
