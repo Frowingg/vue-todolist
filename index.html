@@ -11,26 +11,29 @@
 </head>
 <body>
     
+    <div  id="root">
     <!-- HEADER -->
-    <header>
-            <label for="insToDo"></label>
-            <input v-model="newToDoText" keyup.enter="addNewToDo" type="text" id="insToDo" placeholder="New ToDo">
-            <button @click="addNewToDo">Add</button>
-    </header>
+        <header>
+                <label for="insToDo"></label>
+                <input  v-model="newToDoText" @keyup.enter="addNewToDo()" type="text" id="insToDo" placeholder="New ToDo">
+                <button @click="addNewToDo()">Add</button>
+        </header>
 
-    <!-- MAIN -->
-    <main id="root">
+        <!-- MAIN -->
+        <main>
 
-        <ul>
+            <ul>
 
-            <li v-for="(singleToDo, index) in toDos">
-                <p @click="invertThisItem(index)" :class="{'done' : toDos[index].done}">{{toDos[index].toDo}}</p>
-                <i @click="deledeToDo(index)" class="fa-solid fa-xmark"></i>       
-            </li>
+                <li v-for="(singleToDo, index) in toDos">
+                    <p @click="invertThisItem(index)" :class="{'done' : singleToDo.done}">{{singleToDo.toDo}}</p>
+                    <i @click="deledeToDo(index)" class="fa-solid fa-xmark"></i>       
+                </li>
 
-        </ul>
+            </ul>
 
-    </main>
+        </main>
+    </div>
+
 
     <script src="js/script.js"></script>
 </body>

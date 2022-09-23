@@ -25,11 +25,12 @@ var root = new Vue({
             this.toDos[index].done = !this.toDos[index].done;
         },
         addNewToDo() {
-            newToDo = `{
-                        toDo: '${newToDoText}',
+            newToDo = {
+                        toDo: `${this.newToDoText}`,
                         done: false,
-                        },`;
-            this.toDos.push(this.newToDo);
+                    };
+            this.toDos.push(newToDo);
+            this.newToDoText = '';
         }
     }
 })
